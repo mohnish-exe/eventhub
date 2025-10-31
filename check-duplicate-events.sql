@@ -1,0 +1,22 @@
+-- Check for events on Oct 30, 2025 with same time
+SELECT 
+    e.EVENT_ID,
+    e.TITLE,
+    e.VENUE_ID,
+    e.EVENT_DATE,
+    e.START_TIME,
+    e.END_TIME,
+    c.ROOM_NUMBER,
+    c.BUILDING,
+    cl.NAME as CLUB_NAME
+FROM EVENTS_1 e
+LEFT JOIN CLASSROOMS_1 c ON e.VENUE_ID = c.ID
+LEFT JOIN CLUBS_1 cl ON e.CLUB_ID = cl.ID
+WHERE TRUNC(e.EVENT_DATE) = TO_DATE('2025-10-30', 'YYYY-MM-DD')
+  AND e.START_TIME = '17:00'
+  AND e.END_TIME = '19:00'
+ORDER BY e.CREATED_AT DESC;
+
+-- Also check the classrooms table
+SELECT ID, ROOM_NUMBER, BUILDING FROM CLASSROOMS_1 WHERE ROOM_NUMBER LIKE '%505%';
+

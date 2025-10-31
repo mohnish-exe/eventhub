@@ -1,0 +1,38 @@
+-- Check what's actually in the database for Oct 30, 2025
+SELECT 
+    EVENT_ID,
+    TITLE,
+    VENUE_ID,
+    TO_CHAR(EVENT_DATE, 'YYYY-MM-DD') as EVENT_DATE_STR,
+    START_TIME,
+    END_TIME,
+    CLUB_ID,
+    DUMP(START_TIME) as START_TIME_DUMP,
+    DUMP(END_TIME) as END_TIME_DUMP
+FROM EVENTS_1
+WHERE TRUNC(EVENT_DATE) = TO_DATE('2025-10-30', 'YYYY-MM-DD')
+  AND VENUE_ID = 64
+ORDER BY START_TIME;
+
+-- Test the overlap query manually
+SELECT COUNT(1) AS CNT
+FROM EVENTS_1 e
+WHERE e.VENUE_ID = 64
+  AND TRUNC(e.EVENT_DATE) = TRUNC(TO_DATE('2025-10-30', 'YYYY-MM-DD'))
+  AND e.START_TIME < '19:00'
+  AND e.END_TIME > '17:00';
+
+-- Check if any events exist at all
+SELECT COUNT(*) as TOTAL_EVENTS FROM EVENTS_1;
+
+-- Check events with club information
+SELECT 
+    e.EVENT_ID,
+    e.TITLE,
+    e.CLUB_ID,
+    cl.NAME as CLUB_NAME
+FROM EVENTS_1 e
+LEFT JOIN CLUBS_1 cl ON e.CLUB_ID = cl.ID
+WHERE TRUNC(e.EVENT_DATE) = TO_DATE('2025-10-30', 'YYYY-MM-DD')
+ORDER BY e.EVENT_ID;
+

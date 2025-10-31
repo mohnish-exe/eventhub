@@ -1,0 +1,22 @@
+{
+  "name": "oracle-api-server",
+  "version": "1.0.0",
+  "description": "Backend API server for Oracle database operations",
+  "main": "oracle-api-server.js",
+  "scripts": {
+    "start": "node oracle-api-server.js",
+    "dev": "nodemon oracle-api-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "oracledb": "^6.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["oracle", "api", "database", "express"],
+  "author": "Your Name",
+  "license": "MIT"
+}
+
