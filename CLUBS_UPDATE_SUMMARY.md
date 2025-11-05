@@ -77,10 +77,6 @@
 
 To apply the database migration:
 
-```sql
--- Run this SQL script in your Oracle database
-@supabase/migrations/20251021_make_clubs_fields_mandatory.sql
-```
 
 Or execute the SQL commands manually:
 
