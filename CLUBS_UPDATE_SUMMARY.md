@@ -2,7 +2,7 @@
 
 ## Changes Implemented
 
-### 1. **Added Delete Button for Clubs** ✅
+### 1. **Added Delete Button for Clubs** 
 - Added a "Delete Club" button below the "View Events" button on each club card
 - Button features:
   - Red destructive variant for visual emphasis
@@ -10,7 +10,7 @@
   - Confirmation dialog before deletion
   - Full-width button layout
 
-### 2. **Created Club Events Sub-Page** ✅
+### 2. **Created Club Events Sub-Page** 
 - When "View Events" is clicked, users are taken to a new sub-page
 - Features:
   - Page title: "Events by {Club Name}"
@@ -19,7 +19,7 @@
   - Uses the same `EventCard` component from the Events page
   - Supports event deletion from this view
 
-### 3. **Added "View Clubs" Back Button** ✅
+### 3. **Added "View Clubs" Back Button** 
 - Back button features:
   - Positioned at the top of the club events sub-page
   - Left arrow icon for visual clarity
