@@ -64,22 +64,10 @@
   - Shows club events sub-page when `selectedClub` is set
   - Shows main clubs list otherwise
 
-#### `supabase/migrations/20251021_make_clubs_fields_mandatory.sql`
-- Safely updates existing NULL values to prevent constraint violations
-- Alters table to add NOT NULL constraints
-- Commits changes to database
 
 #### `oracle-schema.sql`
 - Updated clubs table definition to reflect NOT NULL constraints
 - Ensures future database setups have correct schema
-
-## How to Apply Database Changes
-
-To apply the database migration:
-
-
-Or execute the SQL commands manually:
-
 
 
 ## User Experience Improvements
